@@ -35,15 +35,16 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.cadastrarLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirAlunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atualizarBuscarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cadastroModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.excluirModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.atualizarBuscarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +69,8 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.excluirAlunoToolStripMenuItem,
             this.cadastroModalidadeToolStripMenuItem,
             this.excluirModalidadeToolStripMenuItem,
-            this.atualizarBuscarModalidadeToolStripMenuItem});
+            this.atualizarBuscarModalidadeToolStripMenuItem,
+            this.buscarModalidadeToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
@@ -77,30 +79,51 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // cadastrarAlunoToolStripMenuItem
             // 
             this.cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
-            this.cadastrarAlunoToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.cadastrarAlunoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.cadastrarAlunoToolStripMenuItem.Text = "Cadastrar Aluno";
             this.cadastrarAlunoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarAlunoToolStripMenuItem_Click);
             // 
             // cadastrarLoginToolStripMenuItem
             // 
             this.cadastrarLoginToolStripMenuItem.Name = "cadastrarLoginToolStripMenuItem";
-            this.cadastrarLoginToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.cadastrarLoginToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.cadastrarLoginToolStripMenuItem.Text = "Cadastrar Login";
             this.cadastrarLoginToolStripMenuItem.Click += new System.EventHandler(this.cadastrarLoginToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // excluirAlunoToolStripMenuItem
             // 
             this.excluirAlunoToolStripMenuItem.Name = "excluirAlunoToolStripMenuItem";
-            this.excluirAlunoToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.excluirAlunoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.excluirAlunoToolStripMenuItem.Text = "Excluir Aluno";
             this.excluirAlunoToolStripMenuItem.Click += new System.EventHandler(this.excluirAlunoToolStripMenuItem_Click);
+            // 
+            // cadastroModalidadeToolStripMenuItem
+            // 
+            this.cadastroModalidadeToolStripMenuItem.Name = "cadastroModalidadeToolStripMenuItem";
+            this.cadastroModalidadeToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.cadastroModalidadeToolStripMenuItem.Text = "Cadastro Modalidade";
+            this.cadastroModalidadeToolStripMenuItem.Click += new System.EventHandler(this.cadastroModalidadeToolStripMenuItem_Click);
+            // 
+            // excluirModalidadeToolStripMenuItem
+            // 
+            this.excluirModalidadeToolStripMenuItem.Name = "excluirModalidadeToolStripMenuItem";
+            this.excluirModalidadeToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.excluirModalidadeToolStripMenuItem.Text = "Excluir Modalidade";
+            this.excluirModalidadeToolStripMenuItem.Click += new System.EventHandler(this.excluirModalidadeToolStripMenuItem_Click);
+            // 
+            // atualizarBuscarModalidadeToolStripMenuItem
+            // 
+            this.atualizarBuscarModalidadeToolStripMenuItem.Name = "atualizarBuscarModalidadeToolStripMenuItem";
+            this.atualizarBuscarModalidadeToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.atualizarBuscarModalidadeToolStripMenuItem.Text = "Atualizar Modalidade";
+            this.atualizarBuscarModalidadeToolStripMenuItem.Click += new System.EventHandler(this.atualizarBuscarModalidadeToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -164,26 +187,12 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.textBox1.Text = "Bia";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // cadastroModalidadeToolStripMenuItem
+            // buscarModalidadeToolStripMenuItem
             // 
-            this.cadastroModalidadeToolStripMenuItem.Name = "cadastroModalidadeToolStripMenuItem";
-            this.cadastroModalidadeToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.cadastroModalidadeToolStripMenuItem.Text = "Cadastro Modalidade";
-            this.cadastroModalidadeToolStripMenuItem.Click += new System.EventHandler(this.cadastroModalidadeToolStripMenuItem_Click);
-            // 
-            // excluirModalidadeToolStripMenuItem
-            // 
-            this.excluirModalidadeToolStripMenuItem.Name = "excluirModalidadeToolStripMenuItem";
-            this.excluirModalidadeToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
-            this.excluirModalidadeToolStripMenuItem.Text = "Excluir Modalidade";
-            this.excluirModalidadeToolStripMenuItem.Click += new System.EventHandler(this.excluirModalidadeToolStripMenuItem_Click);
-            // 
-            // atualizarBuscarModalidadeToolStripMenuItem
-            // 
-            this.atualizarBuscarModalidadeToolStripMenuItem.Name = "atualizarBuscarModalidadeToolStripMenuItem";
-            this.atualizarBuscarModalidadeToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.atualizarBuscarModalidadeToolStripMenuItem.Text = "Atualizar/Buscar Modalidade";
-            this.atualizarBuscarModalidadeToolStripMenuItem.Click += new System.EventHandler(this.atualizarBuscarModalidadeToolStripMenuItem_Click);
+            this.buscarModalidadeToolStripMenuItem.Name = "buscarModalidadeToolStripMenuItem";
+            this.buscarModalidadeToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.buscarModalidadeToolStripMenuItem.Text = "Buscar Modalidade";
+            this.buscarModalidadeToolStripMenuItem.Click += new System.EventHandler(this.buscarModalidadeToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -223,6 +232,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private System.Windows.Forms.ToolStripMenuItem cadastroModalidadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excluirModalidadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atualizarBuscarModalidadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buscarModalidadeToolStripMenuItem;
     }
 }
 

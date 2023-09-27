@@ -120,7 +120,14 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private void atualizarBuscarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form8 f8 = new Form8();
+            Form8 f8 = new Form8(1);
+            f8.MdiParent = this;
+            f8.Show();
+        }
+
+        private void buscarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form8 f8 = new Form8(2);
             f8.MdiParent = this;
             f8.Show();
         }

@@ -16,7 +16,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         int op = 0;
         String atual = "";
 
-        public Form8()
+        public Form8(int p)
         {
             InitializeComponent();
             Modalidade combo = new Modalidade();
@@ -27,12 +27,25 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 comboBox1.Items.Add(ler["descricaoModalidade"].ToString());
             }
             DAO_Conexao.con.Close();
+            if(p == 2)
+            {
+                op = 1;
+                btnAtualizar.Visible = false;
+                btnReativar.Visible = false;
+            }
+            else
+            {
+                op = 2;
+                btnBuscar.Visible = false;
+                btnReativar.Enabled = false;
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             Modalidade modal = new Modalidade();
             modal.consultarModalidade();
+
             txtPrecoAtu.Enabled = false;
             txtQtdeAlunosAtu.Enabled = false;
             txtQtdeAulasAtu.Enabled = false;
@@ -65,8 +78,8 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
             if(op == 1)
             {
-                btnAtualizar.Enabled = false;
-                btnReativar.Enabled = false;
+                btnAtualizar.Visible = false;
+                btnReativar.Visible = false;
 
             }
             if(op == 2)
@@ -97,7 +110,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 {
                     MessageBox.Show("Reativo!");
                 }
-
             }
             catch(Exception ex)
             {
