@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 {
@@ -15,11 +16,30 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         public Form7()
         {
             InitializeComponent();
+            Modalidade combo = new Modalidade();
+            MySqlDataReader ler = combo.consultarModalidade01();
+
+            while (ler.Read())
+            {
+                comboBox1.Items.Add(ler["descricaoModalidade"].ToString());
+            }
+            DAO_Conexao.con.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Modalidade model = new Modalidade(comboBox1.Text);
+            model.consultarModalidade();
+            DAO_Conexao.con.Close();
 
+            if (model.excluirModalidade(comboBox1.Text))
+            {
+                MessageBox.Show("Modalidade excluída com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("ERRO ao excluir!");
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

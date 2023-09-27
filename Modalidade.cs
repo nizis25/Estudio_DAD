@@ -19,7 +19,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         public int Qtde_alunos { get => qtde_alunos; set => qtde_alunos = value; }
         public int Qtde_aulas { get => qtde_aulas; set => qtde_aulas = value; }
 
-        public Modalidade (string descricao, float preco, int qtde_alunos, int qtde_aulas)
+        public Modalidade(string descricao, float preco, int qtde_alunos, int qtde_aulas)
         {
             this.descricao = descricao;
             this.preco = preco;
@@ -27,12 +27,12 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.qtde_aulas = qtde_aulas;
         }
 
-        public Modalidade (string descricao)
+        public Modalidade(string descricao)
         {
             this.descricao = descricao;
         }
 
-        public Modalidade ()
+        public Modalidade()
         {
 
         }
@@ -62,14 +62,14 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             return cad;
         }
 
-        public bool excluirModalidade()
+        public bool excluirModalidade(string descricao)
         {
             bool exc = false;
 
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand exclui = new MySqlCommand("update Estudio_Modalidae set ativo " + "= 1 where descricaoModalidade = '" + descricao + "'", DAO_Conexao.con);
+                MySqlCommand exclui = new MySqlCommand("update Estudio_Modalidae set ativa " + "= 1 where descricaoModalidade = '" + descricao + "'", DAO_Conexao.con);
                 exclui.ExecuteNonQuery();
                 exc = true;
             }
@@ -93,8 +93,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             try
             {
                 DAO_Conexao.con.Open();
-                //Console.WriteLine("update Estudio_Aluno set nomeAluno = '" + Nome + "', ruaAluno = '" + Rua + "', numeroAluno = '" + Numero + "', bairroAluno = '" + Bairro + "' complementoAluno ='" + Complemento + "',CEPAluno='" + CEP + "', cidadeAluno='" + Cidade + "', estadoAluno='" + Estado + "', telefoneAluno = '" + Telefone + "', emailAluno = '" + Email + "' where CPFAluno = '" + CPF + "'");
-                MySqlCommand atualiza = new MySqlCommand("update Estudio_Modalidae set descricaoModalidade = '" + descricao + "', precoModalidade = '" + preco + "', qtdeAlunos = '" + qtde_alunos + "', qtdeAulas = '" + qtde_aulas + "' where descricaoModalidade = '" + descricao + "'", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand("update Estudio_Modalidae set descricaoModalidade =  precoModalidade = '" + preco + "', qtdeAlunos = '" + qtde_alunos + "', qtdeAulas = '" + qtde_aulas + "' where descricaoModalidade = '" + descricao + "'", DAO_Conexao.con);
                 atualiza.ExecuteNonQuery();
                 exc = true;
             }
@@ -118,7 +117,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidae " + "WHERE descricaoModalidade='" + descricao + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidae", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
 
             }
@@ -129,7 +128,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             return resultado;
         }
 
-        public bool consultarAluno() //usado no método excluir
+        public bool consultarModalidade() //usado no método excluir
         {
 
             bool existe = false;
@@ -137,7 +136,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidae " + "WHERE descricaoModalidade='" + descricao + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidae " + "WHERE descricaoModalidade ='" + descricao + "'", DAO_Conexao.con);
                 Console.WriteLine("SELECT * FROM Estudio_Modalidae " + "WHERE descricaoModalidade='" + descricao + "'");
                 MySqlDataReader resultado = consulta.ExecuteReader();
 
@@ -158,5 +157,27 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             return existe;
         }
 
+        public bool tornarAt()
+        {
+            bool result = false;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand atv = new MySqlCommand("update Estudio_Modalidae set ativa = 0 whre descricaoModalidade = '" + descricao + "'", DAO_Conexao.con);
+                atv.ExecuteNonQuery();
+                result = true;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return result;            
+        }
+
+
+
     }
 }
+
+

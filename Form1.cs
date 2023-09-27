@@ -55,14 +55,14 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
             if(tipo == 1)
             {
-                MessageBox.Show("Usuário ADM >:D ");
+                //MessageBox.Show("Usuário ADM >:D ");
                 groupBox1.Visible = false;
                 menuStrip1.Enabled = true;
             }
             
             if(tipo == 2)
             {
-                MessageBox.Show("Usuário Restrito :O ");
+                //MessageBox.Show("Usuário Restrito :O ");
                 groupBox1.Visible = false;
                 menuStrip1.Enabled = true;
                 cadastrarAlunoToolStripMenuItem.Enabled = false;

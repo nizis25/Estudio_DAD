@@ -40,11 +40,13 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnReativar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnReativar);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.btnAtualizar);
             this.groupBox1.Controls.Add(this.btnBuscar);
@@ -57,7 +59,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(547, 223);
+            this.groupBox1.Size = new System.Drawing.Size(484, 239);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modalidades";
@@ -71,6 +73,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(353, 21);
             this.comboBox1.TabIndex = 10;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnAtualizar
             // 
@@ -80,10 +83,11 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.btnAtualizar.TabIndex = 9;
             this.btnAtualizar.Text = "ATUALIZAR";
             this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(105, 140);
+            this.btnBuscar.Location = new System.Drawing.Point(105, 141);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(353, 23);
             this.btnBuscar.TabIndex = 8;
@@ -148,11 +152,21 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.label1.TabIndex = 0;
             this.label1.Text = "Descrição:";
             // 
+            // btnReativar
+            // 
+            this.btnReativar.Location = new System.Drawing.Point(105, 200);
+            this.btnReativar.Name = "btnReativar";
+            this.btnReativar.Size = new System.Drawing.Size(353, 23);
+            this.btnReativar.TabIndex = 11;
+            this.btnReativar.Text = "REATIVAR";
+            this.btnReativar.UseVisualStyleBackColor = true;
+            this.btnReativar.Click += new System.EventHandler(this.btnReativar_Click);
+            // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 243);
+            this.ClientSize = new System.Drawing.Size(509, 264);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form8";
             this.Text = "Buscar/Atualizar Modalidades";
@@ -176,5 +190,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnReativar;
     }
 }

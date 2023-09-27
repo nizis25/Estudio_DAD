@@ -30,7 +30,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             {
                 if (aluno.consultarAluno())
                 {
-                    
+                    MessageBox.Show("Deseja mesmo excluir?");
                     if (aluno.excluirAluno())
                     {
                         MessageBox.Show("Aluno Excluído com sucesso!");
@@ -41,6 +41,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                     MessageBox.Show("Aluno não encontrado");
                 }
             }
+            
             DAO_Conexao.con.Close();
         }
 
