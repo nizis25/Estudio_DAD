@@ -27,8 +27,9 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         }
 
-        private void cadastrarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        /*private void cadastrarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //CADASTRAR ALUNO
             Form3 f3 = new Form3();
             f3.MdiParent = this;
             f3.Show();
@@ -36,8 +37,9 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //SAIR
             Application.Exit();
-        }
+        }*/
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -90,8 +92,9 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         }
 
-        private void cadastrarLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        /*private void cadastrarLoginToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //CADASTRAR LOGIN
             Form2 f2 = new Form2();
             f2.MdiParent = this;
             f2.Show();
@@ -99,6 +102,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private void excluirAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //EXCLUIR ALUNO
             Form4 f4 = new Form4();
             f4.MdiParent = this;
             f4.Show();
@@ -106,6 +110,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private void cadastroModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //CADASTRO MODALIDADE
             Form6 f6 = new Form6();
             f6.MdiParent = this;
             f6.Show();
@@ -113,6 +118,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private void excluirModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //EXCLUIR MODALIDADE
             Form7 f7 = new Form7();
             f7.MdiParent = this;
             f7.Show();
@@ -120,6 +126,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private void atualizarBuscarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //ATUALIZAR MODALIDADE
             Form8 f8 = new Form8(1);
             f8.MdiParent = this;
             f8.Show();
@@ -127,9 +134,120 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private void buscarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //BUSCAR MODALIDADE
             Form8 f8 = new Form8(2);
             f8.MdiParent = this;
             f8.Show();
+        }
+
+        private void cadastrarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //CADASTRAR TURMA
+            Form9 f9 = new Form9();
+            f9.MdiParent = this;
+            f9.Show();
+        }
+
+        private void excluirTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //EXCLUIR TURMA
+            Form10 f10 = new Form10();
+            f10.MdiParent = this;
+            f10.Show();
+        }*/
+
+        private void sairToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //SAIR
+            Application.Exit();
+        }
+
+        private void cadastrarLoginToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //CADASTRAR LOGIN
+            Form2 f2 = new Form2();
+            f2.MdiParent = this;
+            f2.Show();
+        }
+
+        private void cadastrarAlunoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //CADASTRAR ALUNO
+            Form3 f3 = new Form3();
+            f3.MdiParent = this;
+            f3.Show();
+        }
+
+        private void excluirAlunoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //EXCLUIR ALUNO
+            Form4 f4 = new Form4();
+            f4.MdiParent = this;
+            f4.Show();
+        }
+
+        private void cadastrarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //CADASTRAR MODALIDADE
+            Form6 f6 = new Form6();
+            f6.MdiParent = this;
+            f6.Show();
+        }
+
+        private void excluirModalidadeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //EXCLUIR MODALIDADE
+            Form7 f7 = new Form7();
+            f7.MdiParent = this;
+            f7.Show();
+        }
+
+        private void atualizarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //ATUALIZAR MODALIDADE
+            Form8 f8 = new Form8(1);
+            f8.MdiParent = this;
+            f8.Show();
+        }
+
+        private void buscarModalidadeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            //BUSCAR MODALIDADE
+            Form8 f8 = new Form8(2);
+            f8.MdiParent = this;
+            f8.Show();
+        }
+
+        private void cadastrarTurmaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //CADASTRAR TURMA
+            Form9 f9 = new Form9();
+            f9.MdiParent = this;
+            f9.Show();
+        }
+
+        private void excluirTurmaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //EXCLUIR TURMA
+            Form10 f10 = new Form10();
+            f10.MdiParent = this;
+            f10.Show();
+        }
+
+        private void consultarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //consultar turma
+            Form11 f11 = new Form11();
+            f11.MdiParent = this;
+            f11.Show();
+        }
+
+        private void atualizarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Atualizar turma 
+            Form12 f12 = new Form12();
+            f12.MdiParent = this;
+            f12.Show();
         }
     }
 }

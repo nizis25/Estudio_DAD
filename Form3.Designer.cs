@@ -163,7 +163,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.mkdCEP.Name = "mkdCEP";
             this.mkdCEP.Size = new System.Drawing.Size(63, 20);
             this.mkdCEP.TabIndex = 15;
-            
             // 
             // txtBairro
             // 
@@ -185,7 +184,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(382, 20);
             this.txtNome.TabIndex = 12;
-           
             // 
             // mkdCPF
             // 
@@ -194,8 +192,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.mkdCPF.Name = "mkdCPF";
             this.mkdCPF.Size = new System.Drawing.Size(88, 20);
             this.mkdCPF.TabIndex = 11;
-            
-            
             this.mkdCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskedTextBox1_KeyPress);
             // 
             // label11
@@ -324,6 +320,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.Controls.Add(this.groupBox1);
             this.Name = "Form3";
             this.Text = "Cadastro de Aluno";
+            this.Load += new System.EventHandler(this.Form3_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

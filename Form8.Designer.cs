@@ -30,9 +30,9 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnReativar = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnAtualizar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtQtdeAulasAtu = new System.Windows.Forms.TextBox();
             this.txtQtdeAlunosAtu = new System.Windows.Forms.TextBox();
             this.txtPrecoAtu = new System.Windows.Forms.TextBox();
@@ -40,7 +40,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnReativar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +48,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.groupBox1.Controls.Add(this.btnReativar);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.btnAtualizar);
-            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.txtQtdeAulasAtu);
             this.groupBox1.Controls.Add(this.txtQtdeAlunosAtu);
             this.groupBox1.Controls.Add(this.txtPrecoAtu);
@@ -64,6 +62,16 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Modalidades";
             // 
+            // btnReativar
+            // 
+            this.btnReativar.Location = new System.Drawing.Point(105, 178);
+            this.btnReativar.Name = "btnReativar";
+            this.btnReativar.Size = new System.Drawing.Size(353, 23);
+            this.btnReativar.TabIndex = 11;
+            this.btnReativar.Text = "REATIVAR";
+            this.btnReativar.UseVisualStyleBackColor = true;
+            this.btnReativar.Click += new System.EventHandler(this.btnReativar_Click);
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -73,27 +81,17 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(353, 21);
             this.comboBox1.TabIndex = 10;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(105, 170);
+            this.btnAtualizar.Location = new System.Drawing.Point(105, 149);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(353, 23);
             this.btnAtualizar.TabIndex = 9;
             this.btnAtualizar.Text = "ATUALIZAR";
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(105, 141);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(353, 23);
-            this.btnBuscar.TabIndex = 8;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtQtdeAulasAtu
             // 
@@ -152,16 +150,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.label1.TabIndex = 0;
             this.label1.Text = "Descrição:";
             // 
-            // btnReativar
-            // 
-            this.btnReativar.Location = new System.Drawing.Point(105, 200);
-            this.btnReativar.Name = "btnReativar";
-            this.btnReativar.Size = new System.Drawing.Size(353, 23);
-            this.btnReativar.TabIndex = 11;
-            this.btnReativar.Text = "REATIVAR";
-            this.btnReativar.UseVisualStyleBackColor = true;
-            this.btnReativar.Click += new System.EventHandler(this.btnReativar_Click);
-            // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,7 +169,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAtualizar;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtQtdeAulasAtu;
         private System.Windows.Forms.TextBox txtQtdeAlunosAtu;
         private System.Windows.Forms.TextBox txtPrecoAtu;

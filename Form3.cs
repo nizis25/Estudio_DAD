@@ -83,6 +83,10 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
            
         }
 
+        private void Form3_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
