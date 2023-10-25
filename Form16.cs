@@ -16,5 +16,10 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         {
             InitializeComponent();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
