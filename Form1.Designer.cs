@@ -44,6 +44,8 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.turmaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarTurmaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirTurmaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atualizarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -52,8 +54,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.consultarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.atualizarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -185,6 +185,20 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.excluirTurmaToolStripMenuItem1.Text = "Excluir Turma";
             this.excluirTurmaToolStripMenuItem1.Click += new System.EventHandler(this.excluirTurmaToolStripMenuItem1_Click);
             // 
+            // consultarTurmaToolStripMenuItem
+            // 
+            this.consultarTurmaToolStripMenuItem.Name = "consultarTurmaToolStripMenuItem";
+            this.consultarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarTurmaToolStripMenuItem.Text = "Consultar Turma";
+            this.consultarTurmaToolStripMenuItem.Click += new System.EventHandler(this.consultarTurmaToolStripMenuItem_Click);
+            // 
+            // atualizarTurmaToolStripMenuItem
+            // 
+            this.atualizarTurmaToolStripMenuItem.Name = "atualizarTurmaToolStripMenuItem";
+            this.atualizarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.atualizarTurmaToolStripMenuItem.Text = "Atualizar Turma";
+            this.atualizarTurmaToolStripMenuItem.Click += new System.EventHandler(this.atualizarTurmaToolStripMenuItem_Click);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -258,20 +272,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Bia";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // consultarTurmaToolStripMenuItem
-            // 
-            this.consultarTurmaToolStripMenuItem.Name = "consultarTurmaToolStripMenuItem";
-            this.consultarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.consultarTurmaToolStripMenuItem.Text = "Consultar Turma";
-            this.consultarTurmaToolStripMenuItem.Click += new System.EventHandler(this.consultarTurmaToolStripMenuItem_Click);
-            // 
-            // atualizarTurmaToolStripMenuItem
-            // 
-            this.atualizarTurmaToolStripMenuItem.Name = "atualizarTurmaToolStripMenuItem";
-            this.atualizarTurmaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.atualizarTurmaToolStripMenuItem.Text = "Atualizar turma";
-            this.atualizarTurmaToolStripMenuItem.Click += new System.EventHandler(this.atualizarTurmaToolStripMenuItem_Click);
             // 
             // Form1
             // 

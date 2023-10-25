@@ -102,10 +102,26 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             int qtdeAluno = int.Parse(txtQtdeAlunosAtu.Text);
             int qtdeAulas = int.Parse(txtQtdeAulasAtu.Text);
             Modalidade modal = new Modalidade(comboBox1.Text, preco, qtdeAluno, qtdeAulas);
-            if (modal.tornarAt())
+            MySqlDataReader r = modal.consultarModalidade03();
+            if(r.Read())
             {
-                MessageBox.Show("Reativo!");
+                DAO_Conexao.con.Close();
+
+                if (modal.tornarAt())
+                {
+                    MessageBox.Show("Reativo!");
+                }
+                else
+                {
+                    MessageBox.Show("Erros:(");
+                }
             }
+
+            else
+            {
+                MessageBox.Show("Não encontrado");
+            }
+            
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
@@ -150,6 +166,16 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                     btnReativar.Enabled = true;
                 }
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
         }
     }
 }

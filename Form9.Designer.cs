@@ -30,7 +30,9 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxTurma = new System.Windows.Forms.ComboBox();
+            this.txtModalidade = new System.Windows.Forms.TextBox();
+            this.txtNumMax = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.mkdHora = new System.Windows.Forms.MaskedTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.modalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,17 +43,15 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtNumMax = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtModalidade);
             this.groupBox1.Controls.Add(this.txtNumMax);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comboBoxTurma);
             this.groupBox1.Controls.Add(this.mkdHora);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.txtDSemana);
@@ -62,28 +62,42 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(17, 16);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(831, 299);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Turma";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // comboBoxTurma
+            // txtModalidade
             // 
-            this.comboBoxTurma.FormattingEnabled = true;
-            this.comboBoxTurma.Location = new System.Drawing.Point(148, 66);
-            this.comboBoxTurma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBoxTurma.Name = "comboBoxTurma";
-            this.comboBoxTurma.Size = new System.Drawing.Size(285, 24);
-            this.comboBoxTurma.TabIndex = 11;
+            this.txtModalidade.Location = new System.Drawing.Point(148, 67);
+            this.txtModalidade.Name = "txtModalidade";
+            this.txtModalidade.Size = new System.Drawing.Size(285, 22);
+            this.txtModalidade.TabIndex = 13;
+            // 
+            // txtNumMax
+            // 
+            this.txtNumMax.Location = new System.Drawing.Point(215, 156);
+            this.txtNumMax.Name = "txtNumMax";
+            this.txtNumMax.Size = new System.Drawing.Size(100, 22);
+            this.txtNumMax.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(25, 159);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(176, 16);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Numero MÁXIMO de Alunos:";
             // 
             // mkdHora
             // 
             this.mkdHora.Location = new System.Drawing.Point(370, 153);
-            this.mkdHora.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mkdHora.Margin = new System.Windows.Forms.Padding(4);
             this.mkdHora.Mask = "90:00";
             this.mkdHora.Name = "mkdHora";
             this.mkdHora.Size = new System.Drawing.Size(63, 22);
@@ -96,7 +110,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.modalidade});
             this.dataGridView1.Location = new System.Drawing.Point(459, 56);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(320, 185);
@@ -113,7 +127,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // txtDSemana
             // 
             this.txtDSemana.Location = new System.Drawing.Point(148, 123);
-            this.txtDSemana.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDSemana.Margin = new System.Windows.Forms.Padding(4);
             this.txtDSemana.Name = "txtDSemana";
             this.txtDSemana.Size = new System.Drawing.Size(285, 22);
             this.txtDSemana.TabIndex = 7;
@@ -121,7 +135,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // txtProfessor
             // 
             this.txtProfessor.Location = new System.Drawing.Point(148, 95);
-            this.txtProfessor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtProfessor.Margin = new System.Windows.Forms.Padding(4);
             this.txtProfessor.Name = "txtProfessor";
             this.txtProfessor.Size = new System.Drawing.Size(285, 22);
             this.txtProfessor.TabIndex = 6;
@@ -129,7 +143,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(148, 202);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(285, 28);
             this.button1.TabIndex = 4;
@@ -177,29 +191,13 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.label1.TabIndex = 0;
             this.label1.Text = " Modalidade:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 159);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 16);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Numero MÁXIMO de Alunos:";
-            // 
-            // txtNumMax
-            // 
-            this.txtNumMax.Location = new System.Drawing.Point(207, 156);
-            this.txtNumMax.Name = "txtNumMax";
-            this.txtNumMax.Size = new System.Drawing.Size(100, 22);
-            this.txtNumMax.TabIndex = 1;
-            // 
             // Form9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 325);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form9";
             this.Text = "Cadastro de Turma";
             this.Load += new System.EventHandler(this.Form9_Load);
@@ -213,8 +211,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modalidade;
         private System.Windows.Forms.TextBox txtDSemana;
         private System.Windows.Forms.TextBox txtProfessor;
         private System.Windows.Forms.Button button1;
@@ -223,8 +219,10 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox mkdHora;
-        private System.Windows.Forms.ComboBox comboBoxTurma;
         private System.Windows.Forms.TextBox txtNumMax;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modalidade;
+        private System.Windows.Forms.TextBox txtModalidade;
     }
 }

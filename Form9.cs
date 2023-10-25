@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 {
@@ -20,7 +21,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             MySqlDataReader r = cad.consultarModalidade01();
             while(r.Read())
             {
-                comboBoxTurma.Items.Add(r["descricaoModalidade"].ToString());
+                dataGridView1.Rows.Add(r["descricaoModalidade"].ToString());
             }
             DAO_Conexao.con.Close();
         }
@@ -28,34 +29,17 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string professor = txtProfessor.Text;
-            string dia_semana = txtDSemana.Text;
-            string hora = mkdHora.Text;
-            string descricaoModalidade = comboBoxTurma.Text;
+                string professor = txtProfessor.Text;
+                string dia_semana = txtDSemana.Text;
+                string hora = mkdHora.Text;
+                string descricaoModalidade = txtModalidade.Text;
 
-            Turma turma =  new Turma();
-            if (string.IsNullOrEmpty(descricaoModalidade))
-            {
-                MessageBox.Show("Selecione uma Modalidade! :)");
-                comboBoxTurma.Text = "";
-                txtProfessor.Text = "";
-                txtDSemana.Text = "";
-                mkdHora.Text = "";
-                txtNumMax.Text = "";
-            }
-            else
-            {
-                MessageBox.Show("ENTROU");
-                int qtde_MaxAlunos = int.Parse(txtNumMax.Text);
-                Turma turmaConsulta = new Turma();
-                int modalidadeTurma = turmaConsulta.consultarIDModalidade(descricaoModalidade);
-                MessageBox.Show("MANDANDO A DESCRICAO PARA O MÉTODOS");
-                modalidadeTurma = turmaConsulta.consultarIDModalidade(txtNumMax.Text);
-                Turma turmaCadastrar = new Turma(modalidadeTurma, dia_semana, hora, professor, qtde_MaxAlunos);
-                if (turmaCadastrar.cadastrarTurma())
+                Turma turma = new Turma();
+
+                if (string.IsNullOrEmpty(descricaoModalidade))
                 {
-                    MessageBox.Show("Cadastrado com Sucesso! :D");
-                    comboBoxTurma.Text = "";
+                    MessageBox.Show("Selecione uma Modalidade! :)");
+                    txtModalidade.Text = "";
                     txtProfessor.Text = "";
                     txtDSemana.Text = "";
                     mkdHora.Text = "";
@@ -63,10 +47,35 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 }
                 else
                 {
-                    MessageBox.Show("Houve um erro :'(");
-                }
+                    int qtde_MaxAlunos = int.Parse(txtNumMax.Text);
+                    Turma turmaConsulta = new Turma();
+                    int modalidadeTurma = turmaConsulta.consultarIDModalidade01(descricaoModalidade);
 
-            }
+                    if (modalidadeTurma > 0) 
+                    {
+                        Turma turmaCadastrar = new Turma(modalidadeTurma, professor, dia_semana, hora, qtde_MaxAlunos);
+
+                        if (turmaCadastrar.cadastrarTurma())
+                        {
+                            MessageBox.Show("Cadastrado com Sucesso! :D");
+                            txtModalidade.Text = "";
+                            txtProfessor.Text = "";
+                            txtDSemana.Text = "";
+                            mkdHora.Text = "";
+                            txtNumMax.Text = "";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Houve um erro :'(");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Modalidade não encontrada!");
+                    }
+                }
+            
+
 
 
         }
@@ -79,13 +88,15 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-            comboBoxTurma.Text = row.Cells[0].Value.ToString();
+            txtModalidade.Text = row.Cells[0].Value.ToString();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
+
+         
     }
-    }
+}
 

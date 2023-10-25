@@ -240,6 +240,23 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             return retorno;
         }
 
+        public MySqlDataReader consultarModalidade03()
+        {
+            MySqlDataReader resultado = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Modalidae WHERE descricaoModalidade ='" + descricao + "'", DAO_Conexao.con);
+                resultado = consulta.ExecuteReader();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            return resultado;
+        }
+            
     }
 }
 

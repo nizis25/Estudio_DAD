@@ -31,77 +31,96 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbbDiaSemana = new System.Windows.Forms.ComboBox();
+            this.cbbHora = new System.Windows.Forms.ComboBox();
+            this.txtMaxAlunos = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtProfessor = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbModalidade = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.cbbDiaSemana);
+            this.groupBox1.Controls.Add(this.cbbHora);
+            this.groupBox1.Controls.Add(this.txtMaxAlunos);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtProfessor);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbbModalidade);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(364, 401);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(339, 278);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consultar Turma";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(19, 346);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(189, 220);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(308, 28);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "CONSULTAR";
+            this.button1.Size = new System.Drawing.Size(107, 29);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "BUSCAR";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // maskedTextBox1
+            // cbbDiaSemana
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(136, 263);
-            this.maskedTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.maskedTextBox1.Mask = "90:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(55, 22);
-            this.maskedTextBox1.TabIndex = 7;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.cbbDiaSemana.FormattingEnabled = true;
+            this.cbbDiaSemana.Location = new System.Drawing.Point(135, 64);
+            this.cbbDiaSemana.Name = "cbbDiaSemana";
+            this.cbbDiaSemana.Size = new System.Drawing.Size(160, 24);
+            this.cbbDiaSemana.TabIndex = 12;
+            this.cbbDiaSemana.SelectedIndexChanged += new System.EventHandler(this.cbbDiaSemana_SelectedIndexChanged);
             // 
-            // textBox2
+            // cbbHora
             // 
-            this.textBox2.Location = new System.Drawing.Point(136, 207);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 22);
-            this.textBox2.TabIndex = 6;
+            this.cbbHora.FormattingEnabled = true;
+            this.cbbHora.Location = new System.Drawing.Point(136, 94);
+            this.cbbHora.Name = "cbbHora";
+            this.cbbHora.Size = new System.Drawing.Size(161, 24);
+            this.cbbHora.TabIndex = 11;
             // 
-            // textBox1
+            // txtMaxAlunos
             // 
-            this.textBox1.Location = new System.Drawing.Point(137, 158);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 22);
-            this.textBox1.TabIndex = 5;
+            this.txtMaxAlunos.Location = new System.Drawing.Point(189, 182);
+            this.txtMaxAlunos.Name = "txtMaxAlunos";
+            this.txtMaxAlunos.Size = new System.Drawing.Size(107, 22);
+            this.txtMaxAlunos.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 185);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(159, 16);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Qtde. MÁXIMA de Alunos:";
+            // 
+            // txtProfessor
+            // 
+            this.txtProfessor.Location = new System.Drawing.Point(136, 125);
+            this.txtProfessor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtProfessor.Name = "txtProfessor";
+            this.txtProfessor.Size = new System.Drawing.Size(160, 22);
+            this.txtProfessor.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 161);
+            this.label4.Location = new System.Drawing.Point(61, 128);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 16);
@@ -112,7 +131,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(84, 267);
+            this.label3.Location = new System.Drawing.Point(89, 97);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 16);
@@ -122,7 +141,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 215);
+            this.label2.Location = new System.Drawing.Point(25, 67);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 16);
@@ -132,31 +151,33 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 101);
+            this.label1.Location = new System.Drawing.Point(46, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Modalidade:";
             // 
-            // comboBox1
+            // cbbModalidade
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(137, 97);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
-            this.comboBox1.TabIndex = 0;
+            this.cbbModalidade.FormattingEnabled = true;
+            this.cbbModalidade.Location = new System.Drawing.Point(136, 32);
+            this.cbbModalidade.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbModalidade.Name = "cbbModalidade";
+            this.cbbModalidade.Size = new System.Drawing.Size(160, 24);
+            this.cbbModalidade.TabIndex = 0;
+            this.cbbModalidade.SelectedIndexChanged += new System.EventHandler(this.cbbModalidade_SelectedIndexChanged);
             // 
             // Form11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 431);
+            this.ClientSize = new System.Drawing.Size(372, 309);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form11";
             this.Text = "Consultar Turma";
+            this.Load += new System.EventHandler(this.Form11_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -166,14 +187,16 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtProfessor;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbModalidade;
+        private System.Windows.Forms.TextBox txtMaxAlunos;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbbDiaSemana;
+        private System.Windows.Forms.ComboBox cbbHora;
         private System.Windows.Forms.Button button1;
     }
 }
