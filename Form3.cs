@@ -21,7 +21,8 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Aluno aluno = new Aluno(mkdCPF.Text, txtNome.Text, txtEnd.Text, txtNum.Text, txtBairro.Text, txtComple.Text, mkdCEP.Text, txtCidade.Text, txtEstado.Text, mkdTel.Text, txtEmail.Text);
+            byte[] foto = ConverterFotoParaByteArray();
+            Aluno aluno = new Aluno(mkdCPF.Text, txtNome.Text, txtEnd.Text, txtNum.Text, txtBairro.Text, txtComple.Text, mkdCEP.Text, txtCidade.Text, txtEstado.Text, mkdTel.Text, txtEmail.Text, foto);
 
             if(aluno.cadastrarAluno())
             {
@@ -86,6 +87,27 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private void Form3_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //MÉTODO CRIADO PARA A CONVERSÃO DA IMAGEM PARA INTEGRÁ-LA NO BANCO
+        private byte[] ConverterFotoParaByteArray()
+        {
+            using(var stream = new System.IO.MemoryStream())
+            {
+                pictureBox1.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                //deslocamento de bytes em relação ao parâmetro original
+                //redefine a posição do fluxo para a gravação
+                stream.Seek(0, System.IO.SeekOrigin.Begin);
+                byte[] bArray = new byte[stream.Length];
+                //lê um bloco de bytes e grava os dados em um buffer (stream)
+                stream.Read(bArray, 0, System.Convert.ToInt32(stream.Length));
+                return bArray;
+            }
         }
     }
 }

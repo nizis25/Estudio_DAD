@@ -23,7 +23,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private byte[] Foto;
         private bool Ativo;
 
-    public Aluno(string cpf,string nome,string rua,string numero,string bairro,string complemento,string cep,string cidade,string estado,string telefone,string email)
+    public Aluno(string cpf,string nome,string rua,string numero,string bairro,string complemento,string cep,string cidade,string estado,string telefone,string email, byte[] foto)
     {
         setCPF(cpf);
         setNome(nome);
@@ -36,7 +36,8 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         setEstado(estado);
         setTelefone(telefone);
         setEmail(email);
-    }
+        setFoto(foto);
+        }
 
         public Aluno()
         {
@@ -175,7 +176,8 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Aluno (CPFAluno, nomeAluno, ruaAluno, numeroAluno, bairroAluno, complementoAluno, CEPAluno, cidadeAluno, estadoAluno, telefoneAluno, emailAluno) values ('" + CPF+"','" + Nome + "','" + Rua + "','" + Numero + "','" + Bairro + "','" + Complemento + "','" + CEP + "','" + Cidade + "','" + Estado + "','" + Telefone + "','" + Email + "')", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Aluno (CPFAluno, nomeAluno, ruaAluno, numeroAluno, bairroAluno, complementoAluno, CEPAluno, cidadeAluno, estadoAluno, telefoneAluno, emailAluno, fotoAluno) values ('" + CPF+"','" + Nome + "','" + Rua + "','" + Numero + "','" + Bairro + "','" + Complemento + "','" + CEP + "','" + Cidade + "','" + Estado + "','" + Telefone + "','" + Email + "', @foto)", DAO_Conexao.con);
+                insere.Parameters.AddWithValue("foto", this.Foto);
                 insere.ExecuteNonQuery();
                 cad = true;
             }
