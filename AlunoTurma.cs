@@ -76,5 +76,19 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             }
             return ex;
         }
+
+        /*public MySqlDataReader verificaAlunoMatriculado()
+        {
+            MySqlDataReader r = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }*/
     }
 }

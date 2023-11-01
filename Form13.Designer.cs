@@ -31,12 +31,13 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtCPF = new System.Windows.Forms.MaskedTextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTurma = new System.Windows.Forms.DataGridView();
             this.idTurmaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modalidadeDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diaSemanaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horaTurmaDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTurma)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,18 +58,18 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.txtCPF.TabIndex = 1;
             this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPF_KeyPress);
             // 
-            // dataGridView1
+            // dgvTurma
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTurma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTurma.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idTurmaDgv,
             this.modalidadeDgv,
             this.diaSemanaDgv,
             this.horaTurmaDgv});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 45);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 306);
-            this.dataGridView1.TabIndex = 2;
+            this.dgvTurma.Location = new System.Drawing.Point(12, 45);
+            this.dgvTurma.Name = "dgvTurma";
+            this.dgvTurma.Size = new System.Drawing.Size(443, 264);
+            this.dgvTurma.TabIndex = 2;
             // 
             // idTurmaDgv
             // 
@@ -90,17 +91,28 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.horaTurmaDgv.HeaderText = "Horário";
             this.horaTurmaDgv.Name = "horaTurmaDgv";
             // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Location = new System.Drawing.Point(15, 331);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(145, 23);
+            this.btnCadastrar.TabIndex = 3;
+            this.btnCadastrar.Text = "CADASTRAR";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            // 
             // Form13
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 363);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(467, 377);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.dgvTurma);
             this.Controls.Add(this.txtCPF);
             this.Controls.Add(this.label1);
             this.Name = "Form13";
-            this.Text = "Cadastrar Aluno na Turma";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Cadastrar/Excluir Aluno na Turma";
+            this.Load += new System.EventHandler(this.Form13_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTurma)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,10 +122,11 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox txtCPF;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTurma;
         private System.Windows.Forms.DataGridViewTextBoxColumn idTurmaDgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn modalidadeDgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn diaSemanaDgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn horaTurmaDgv;
+        private System.Windows.Forms.Button btnCadastrar;
     }
 }

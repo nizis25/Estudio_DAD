@@ -21,8 +21,10 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             byte[] foto = ConverterFotoParaByteArray();
             Aluno aluno = new Aluno(mkdCPF.Text, txtNome.Text, txtEnd.Text, txtNum.Text, txtBairro.Text, txtComple.Text, mkdCEP.Text, txtCidade.Text, txtEstado.Text, mkdTel.Text, txtEmail.Text, foto);
+
 
             if(aluno.cadastrarAluno())
             {
@@ -71,7 +73,8 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Aluno aluno = new Aluno(mkdCPF.Text, txtNome.Text, txtEnd.Text, txtNum.Text, txtBairro.Text, txtComple.Text, mkdCEP.Text, mkdTel.Text, txtCidade.Text, txtEstado.Text, txtEmail.Text, foto);
+
+            Aluno aluno = new Aluno(mkdCPF.Text, txtNome.Text, txtEnd.Text, txtNum.Text, txtBairro.Text, txtComple.Text, mkdCEP.Text, mkdTel.Text, txtCidade.Text, txtEstado.Text, txtEmail.Text);
             if (aluno.atualizarAluno())
             {
                 MessageBox.Show("Dados atualizados com sucesso!");
@@ -91,7 +94,24 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private void button2_Click(object sender, EventArgs e)
         {
+            OpenFileDialog dialog = new OpenFileDialog();
 
+            dialog.Title = "Abrir Foto";
+            dialog.Filter = "JPG (*.jpg)|*.jpg" + "|All files (*.*)|*.*";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    pictureBox1.Image = new Bitmap(dialog.OpenFile());
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Não foi possivel carregar a foto: " + ex.Message);
+                }//catch
+            }//if
+            dialog.Dispose();
         }
 
         //MÉTODO CRIADO PARA A CONVERSÃO DA IMAGEM PARA INTEGRÁ-LA NO BANCO

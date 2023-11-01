@@ -259,7 +259,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private void cadastrarAlunoNaTurmaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //CADASTRAR ALUNO NA TURMA
-            Form13 f13 = new Form13();
+            Form13 f13 = new Form13(0);
             f13.MdiParent = this;
             f13.Show();
         }

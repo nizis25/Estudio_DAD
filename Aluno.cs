@@ -23,20 +23,35 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private byte[] Foto;
         private bool Ativo;
 
-    public Aluno(string cpf,string nome,string rua,string numero,string bairro,string complemento,string cep,string cidade,string estado,string telefone,string email, byte[] foto)
-    {
-        setCPF(cpf);
-        setNome(nome);
-        setRua(rua);
-        setNumero(numero);
-        setBairro(bairro);
-        setComplemento(complemento);
-        setCEP(cep);
-        setCidade(cidade);
-        setEstado(estado);
-        setTelefone(telefone);
-        setEmail(email);
-        setFoto(foto);
+        public Aluno(string cpf,string nome,string rua,string numero,string bairro,string complemento,string cep,string cidade,string estado,string telefone,string email, byte[] foto)
+        {
+            setCPF(cpf);
+            setNome(nome);
+            setRua(rua);
+            setNumero(numero);
+            setBairro(bairro);
+            setComplemento(complemento);
+            setCEP(cep);
+            setCidade(cidade);
+            setEstado(estado);
+            setTelefone(telefone);
+            setEmail(email);
+            setFoto(foto);
+        }
+
+        public Aluno(string cpf, string nome, string rua, string numero, string bairro, string complemento, string cep, string cidade, string estado, string telefone, string email)
+        {
+            setCPF(cpf);
+            setNome(nome);
+            setRua(rua);
+            setNumero(numero);
+            setBairro(bairro);
+            setComplemento(complemento);
+            setCEP(cep);
+            setCidade(cidade);
+            setEstado(estado);
+            setTelefone(telefone);
+            setEmail(email);
         }
 
         public Aluno()
