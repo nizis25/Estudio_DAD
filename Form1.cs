@@ -267,25 +267,25 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private void excluirAlunoNaTurmaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //EXCLUIR ALUNO NA TURMA
-            Form14 f14 = new Form14();
+            /*Form14 f14 = new Form14();
             f14.MdiParent = this;
-            f14.Show();
+            f14.Show();*/
         }
 
         private void buscarConsultarAlunoNaTurnaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //BUSCAR/CONSULTAR ALUNO NA TURMA
-            Form15 f15 = new Form15();
+            /*Form15 f15 = new Form15();
             f15.MdiParent = this;
-            f15.Show();
+            f15.Show();*/
         }
 
         private void atualizarReativarAlunoNaTurmaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //ATUALIZAR/REATIVAR ALUNO NA TURMA
-            Form16 f16 = new Form16();
+            /*Form16 f16 = new Form16();
             f16.MdiParent = this;
-            f16.Show();
+            f16.Show();*/
         }
     }
 }

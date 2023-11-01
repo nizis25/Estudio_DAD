@@ -71,7 +71,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Aluno aluno = new Aluno(mkdCPF.Text, txtNome.Text, txtEnd.Text, txtNum.Text, txtBairro.Text, txtComple.Text, mkdCEP.Text, mkdTel.Text, txtCidade.Text, txtEstado.Text, txtEmail.Text);
+            Aluno aluno = new Aluno(mkdCPF.Text, txtNome.Text, txtEnd.Text, txtNum.Text, txtBairro.Text, txtComple.Text, mkdCEP.Text, mkdTel.Text, txtCidade.Text, txtEstado.Text, txtEmail.Text, foto);
             if (aluno.atualizarAluno())
             {
                 MessageBox.Show("Dados atualizados com sucesso!");
@@ -108,6 +108,11 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 stream.Read(bArray, 0, System.Convert.ToInt32(stream.Length));
                 return bArray;
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

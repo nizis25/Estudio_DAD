@@ -53,5 +53,28 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         }
 
+        public bool verificaAluno(string cpf)
+        {
+            bool ex = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand vEx = new MySqlCommand("select * from Estudio_Aluno where CPFAluno = '" + cpf + "'", DAO_Conexao.con);
+                MySqlDataReader r = vEx.ExecuteReader();
+                while(r.Read())
+                {
+                    ex = true;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return ex;
+        }
     }
 }

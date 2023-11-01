@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,21 +12,20 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 {
     public partial class Form13 : Form
     {
-        public Form13()
+        int option;
+        public Form13(int op)
         {
             InitializeComponent();
-            Turma cad = new Turma();
-            MySqlDataReader r = cad.todas();
-            while (r.Read())
-            {
-                //????
-            }
-            DAO_Conexao.con.Close();
+            option = op;
         }
 
-        private void Form13_Load(object sender, EventArgs e)
+        private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtNome.Enabled = false;    
+            AlunoTurma alT = new AlunoTurma();
+            if (alT.verificaAluno(txtCPF.Text))
+            {
+                Turma t = new Turma();
+            }
         }
     }
 }
