@@ -40,20 +40,23 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         {
             Turma turma = new Turma();
             int modalidadeTurma = turma.consultarIDModalidade(cbbModalidade.Text);
-            
+
             Turma turmaConsultaTodas = new Turma(modalidadeTurma);
             turmaConsultaTodas.todas();
 
             DAO_Conexao.con.Close();
 
-            if(turmaConsultaTodas.excluirTurma())
+            DialogResult res = MessageBox.Show("Deseja mesmo excluir?", "CUIDADO", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+            if (res == DialogResult.Yes)
             {
-                MessageBox.Show("Turma excluída com sucesso! :)");
+                turmaConsultaTodas.excluirTurma();
+                MessageBox.Show("Turma excluída com sucesso! :)", "EXCLUÍDA!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             else
             {
-                MessageBox.Show("ERRO ao excluir! :(");
+                MessageBox.Show("ERRO ao excluir! :(", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -74,7 +77,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             string mod = cbbModalidade.Text;
             string diaSemana = cbbDia.Text;
             MySqlDataReader dia = turma.consultaDia01(diaSemana, mod);
-            while(dia.Read())
+            while (dia.Read())
             {
                 cbbHora.Items.Add(dia["horaTurma"].ToString());
             }
@@ -112,3 +115,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
     }
 }
+
+
+

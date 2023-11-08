@@ -32,18 +32,26 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
             Modalidade modalidade = new Modalidade(descricao, preco, qtdeAlunos, qtdeAulas);
 
-            if (modalidade.cadastrarModalidade())
+            if (Modalidade.consultaModal(descricao) == false)
             {
-                MessageBox.Show("Cadastrado com Sucesso! :D");
-                txtDescricao.Text = "";
-                txtPreco.Text = "";
-                txtQtdeAlunos.Text = "";
-                txtQtdeAulas.Text = "";
+                if (modalidade.cadastrarModalidade())
+                {
+                    MessageBox.Show("Cadastrado com Sucesso! :D", "CADASTRADO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtDescricao.Text = "";
+                    txtPreco.Text = "";
+                    txtQtdeAlunos.Text = "";
+                    txtQtdeAulas.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Houve um erro :'(", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                MessageBox.Show("Houve um erro :'(");
+                MessageBox.Show("Já existe uma modalidade cadastrada com esta descrição. Por favor, escolha outro.", "CUIDADO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
 
             Modalidade modalidade01 = new Modalidade(txtDescricao.Text);
         }
@@ -54,3 +62,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         }
     }
 }
+
+
+

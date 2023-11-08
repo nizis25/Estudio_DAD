@@ -23,7 +23,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private byte[] Foto;
         private bool Ativo;
 
-        public Aluno(string cpf,string nome,string rua,string numero,string bairro,string complemento,string cep,string cidade,string estado,string telefone,string email, byte[] foto)
+        public Aluno(string cpf, string nome, string rua, string numero, string bairro, string complemento, string cep, string cidade, string estado, string telefone, string email, byte[] foto)
         {
             setCPF(cpf);
             setNome(nome);
@@ -191,12 +191,12 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Aluno (CPFAluno, nomeAluno, ruaAluno, numeroAluno, bairroAluno, complementoAluno, CEPAluno, cidadeAluno, estadoAluno, telefoneAluno, emailAluno, fotoAluno) values ('" + CPF+"','" + Nome + "','" + Rua + "','" + Numero + "','" + Bairro + "','" + Complemento + "','" + CEP + "','" + Cidade + "','" + Estado + "','" + Telefone + "','" + Email + "', @foto)", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Aluno (CPFAluno, nomeAluno, ruaAluno, numeroAluno, bairroAluno, complementoAluno, CEPAluno, cidadeAluno, estadoAluno, telefoneAluno, emailAluno, fotoAluno) values ('" + CPF + "','" + Nome + "','" + Rua + "','" + Numero + "','" + Bairro + "','" + Complemento + "','" + CEP + "','" + Cidade + "','" + Estado + "','" + Telefone + "','" + Email + "', @foto)", DAO_Conexao.con);
                 insere.Parameters.AddWithValue("foto", this.Foto);
                 insere.ExecuteNonQuery();
                 cad = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
@@ -205,7 +205,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 DAO_Conexao.con.Close();
             }
             return cad;
-        } 
+        }
 
         public bool consultarAluno() //usado no método excluir
         {
@@ -215,17 +215,17 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno " + "WHERE CPFAluno='" + CPF + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno WHERE CPFAluno='" + CPF + "'", DAO_Conexao.con);
                 Console.WriteLine("SELECT * FROM Estudio_Aluno " + "WHERE CPFAluno='" + CPF + "'");
                 MySqlDataReader resultado = consulta.ExecuteReader();
 
-                if(resultado.Read())
+                while (resultado.Read())
                 {
                     existe = true;
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
@@ -242,9 +242,8 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno " + "WHERE CPFAluno='" + CPF + "'", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM Estudio_Aluno WHERE CPFAluno='" + CPF + "'", DAO_Conexao.con);
                 resultado = consulta.ExecuteReader();
-
             }
             catch (Exception ex)
             {
@@ -281,7 +280,8 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             {
                 DAO_Conexao.con.Open();
                 //Console.WriteLine("update Estudio_Aluno set nomeAluno = '" + Nome + "', ruaAluno = '" + Rua + "', numeroAluno = '" + Numero + "', bairroAluno = '" + Bairro + "' complementoAluno ='" + Complemento + "',CEPAluno='" + CEP + "', cidadeAluno='" + Cidade + "', estadoAluno='" + Estado + "', telefoneAluno = '" + Telefone + "', emailAluno = '" + Email + "' where CPFAluno = '" + CPF + "'");
-                MySqlCommand atualiza = new MySqlCommand("update Estudio_Aluno set nomeAluno = '" + Nome + "', ruaAluno = '" + Rua + "', numeroAluno = '" + Numero + "', bairroAluno = '" + Bairro + "', complementoAluno ='" + Complemento + "',CEPAluno='" + CEP + "', cidadeAluno='" + Cidade + "', estadoAluno='" + Estado + "', telefoneAluno = '" + Telefone + "', emailAluno = '" + Email + "' where CPFAluno = '" + CPF + "'", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand("update Estudio_Aluno set nomeAluno = '" + Nome + "', ruaAluno = '" + Rua + "', numeroAluno = '" + Numero + "', bairroAluno = '" + Bairro + "', complementoAluno = '" + Complemento + "', CEPAluno = '" + CEP + "', cidadeAluno = '" + Cidade + "', estadoAluno = '" + Estado + "', telefoneAluno = '" + Telefone + "', emailAluno = '" + Email + "', fotoAluno = @foto where CPFAluno = '" + CPF + "'", DAO_Conexao.con);
+                atualiza.Parameters.AddWithValue("foto", Foto);
                 atualiza.ExecuteNonQuery();
                 exc = true;
             }
@@ -295,6 +295,49 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             }
             return exc;
         }
+
+        public bool verificaCPF() //string CPF - sem parâmetro
+        {
+            int soma, resto, cont = 0;
+            string cpf;
+            soma = 0;
+
+            cpf = CPF.Trim();
+            cpf = cpf.Replace(",", "");
+            cpf = cpf.Replace("-", "");
+
+            for (int i = 0; i < cpf.Length; i++)
+            {
+                int a = cpf[0] - '0';
+                int b = cpf[i] - '0';
+
+                if (a == b) cont++;
+            }
+
+            if (cont == 11) return false;
+
+            for (int i = 1; i <= 9; i++) soma += int.Parse(cpf.Substring(i - 1, 1)) * (11 - i);
+
+            resto = (soma * 10) % 11;
+
+            if ((resto == 10) || (resto == 11)) resto = 0;
+
+            if (resto != int.Parse(cpf.Substring(9, 1))) return false;
+
+            soma = 0;
+
+            for (int i = 1; i <= 10; i++) soma += int.Parse(cpf.Substring(i - 1, 1)) * (12 - i);
+
+            resto = (soma * 10) % 11;
+
+            if ((resto == 10) || (resto == 11)) resto = 0;
+
+            if (resto != int.Parse(cpf.Substring(10, 1))) return false;
+
+            return true;
+        }
     }
 
 }
+
+

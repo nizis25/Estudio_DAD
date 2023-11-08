@@ -32,13 +32,16 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             model.consultarModalidade();
             DAO_Conexao.con.Close();
 
-            if (model.excluirModalidade(comboBox1.Text))
+            DialogResult res = MessageBox.Show("Deseja mesmo excluir?", "CUIDADO", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+            if (res == DialogResult.Yes)
             {
-                MessageBox.Show("Modalidade excluída com sucesso!");
+                model.excluirModalidade(comboBox1.Text);
+                MessageBox.Show("Modalidade excluída com sucesso!", "EXCLUÍDO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("ERRO ao excluir!");
+                MessageBox.Show("ERRO ao excluir!", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -48,3 +51,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         }
     }
 }
+
+
+

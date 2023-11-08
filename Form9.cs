@@ -19,7 +19,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             InitializeComponent();
             Modalidade cad = new Modalidade();
             MySqlDataReader r = cad.consultarModalidade01();
-            while(r.Read())
+            while (r.Read())
             {
                 dataGridView1.Rows.Add(r["descricaoModalidade"].ToString());
             }
@@ -29,52 +29,52 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         private void button1_Click(object sender, EventArgs e)
         {
-                string professor = txtProfessor.Text;
-                string dia_semana = txtDSemana.Text;
-                string hora = mkdHora.Text;
-                string descricaoModalidade = txtModalidade.Text;
+            string professor = txtProfessor.Text;
+            string dia_semana = txtDSemana.Text;
+            string hora = mkdHora.Text;
+            string descricaoModalidade = txtModalidade.Text;
 
-                Turma turma = new Turma();
+            Turma turma = new Turma();
 
-                if (string.IsNullOrEmpty(descricaoModalidade))
+            if (string.IsNullOrEmpty(descricaoModalidade))
+            {
+                MessageBox.Show("Selecione uma Modalidade! :)", "CUIDADO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtModalidade.Text = "";
+                txtProfessor.Text = "";
+                txtDSemana.Text = "";
+                mkdHora.Text = "";
+                txtNumMax.Text = "";
+            }
+            else
+            {
+                int qtde_MaxAlunos = int.Parse(txtNumMax.Text);
+                Turma turmaConsulta = new Turma();
+                int modalidadeTurma = turmaConsulta.consultarIDModalidade01(descricaoModalidade);
+
+                if (modalidadeTurma > 0)
                 {
-                    MessageBox.Show("Selecione uma Modalidade! :)");
-                    txtModalidade.Text = "";
-                    txtProfessor.Text = "";
-                    txtDSemana.Text = "";
-                    mkdHora.Text = "";
-                    txtNumMax.Text = "";
-                }
-                else
-                {
-                    int qtde_MaxAlunos = int.Parse(txtNumMax.Text);
-                    Turma turmaConsulta = new Turma();
-                    int modalidadeTurma = turmaConsulta.consultarIDModalidade01(descricaoModalidade);
+                    Turma turmaCadastrar = new Turma(modalidadeTurma, professor, dia_semana, hora, qtde_MaxAlunos);
 
-                    if (modalidadeTurma > 0) 
+                    if (turmaCadastrar.cadastrarTurma())
                     {
-                        Turma turmaCadastrar = new Turma(modalidadeTurma, professor, dia_semana, hora, qtde_MaxAlunos);
-
-                        if (turmaCadastrar.cadastrarTurma())
-                        {
-                            MessageBox.Show("Cadastrado com Sucesso! :D");
-                            txtModalidade.Text = "";
-                            txtProfessor.Text = "";
-                            txtDSemana.Text = "";
-                            mkdHora.Text = "";
-                            txtNumMax.Text = "";
-                        }
-                        else
-                        {
-                            MessageBox.Show("Houve um erro :'(");
-                        }
+                        MessageBox.Show("Cadastrado com Sucesso! :D", "CADASTRADO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtModalidade.Text = "";
+                        txtProfessor.Text = "";
+                        txtDSemana.Text = "";
+                        mkdHora.Text = "";
+                        txtNumMax.Text = "";
                     }
                     else
                     {
-                        MessageBox.Show("Modalidade não encontrada!");
+                        MessageBox.Show("Houve um erro :'(", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            
+                else
+                {
+                    MessageBox.Show("Modalidade não encontrada!", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
 
 
 
@@ -96,7 +96,17 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
         }
 
-         
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
+
 

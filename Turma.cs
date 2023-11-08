@@ -14,7 +14,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private int modalidade;
         private int qtde_MaxAlunos;
 
-        public Turma ()
+        public Turma()
         {
 
         }
@@ -42,7 +42,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         public string Professor { get => professor; set => professor = value; }
         public string Dia_semana { get => dia_semana; set => dia_semana = value; }
         public string Hora { get => hora; set => hora = value; }
-        public int Modalidade { get => modalidade; set => modalidade = value; } 
+        public int Modalidade { get => modalidade; set => modalidade = value; }
         public int Qtde_MaxAlunos { get => qtde_MaxAlunos; set => qtde_MaxAlunos = value; }
 
         public bool cadastrarTurma()
@@ -185,20 +185,20 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consultaTurma = new MySqlCommand("SELECT idEstudio_Turma FROM Estudio_Turma WHERE idModalidade = " 
+                MySqlCommand consultaTurma = new MySqlCommand("SELECT idEstudio_Turma FROM Estudio_Turma WHERE idModalidade = "
                     + modalidade + " AND horaTurma = '" + hora
                     + "' AND diasemanaTurma = '" + dia_semana + "'", DAO_Conexao.con);
                 resultado = consultaTurma.ExecuteReader();
 
-                if(resultado.Read())
+                if (resultado.Read())
                 {
                     id = int.Parse(resultado["idEstudio_Turma"].ToString());
                     Console.WriteLine("ConsultarIDTurma" + id);
                 }
             }
 
-            catch(Exception ex)
-            { 
+            catch (Exception ex)
+            {
                 Console.WriteLine(ex.ToString());
             }
 
@@ -209,7 +209,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
             return id;
         }
-        
+
         public MySqlDataReader consultarTodas()
         {
             MySqlDataReader r = null;
@@ -221,7 +221,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 r = consulta.ExecuteReader();
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
@@ -241,7 +241,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
             catch (Exception ex)
             {
-                Console.WriteLine (ex.ToString());
+                Console.WriteLine(ex.ToString());
             }
 
             return busca;
@@ -258,7 +258,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 excluir.ExecuteNonQuery();
                 excluido = true;
             }
-            catch( Exception ex )
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
@@ -268,7 +268,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             }
 
             return excluido;
-            
+
         }
 
         public MySqlDataReader consultaDia(string diaSemana)
@@ -282,9 +282,9 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 resultado = consultaDia.ExecuteReader();
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());   
+                Console.WriteLine(ex.ToString());
             }
 
             /*finally
@@ -293,7 +293,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             }*/
 
             return resultado;
-            
+
         }
 
         public MySqlDataReader consultaDia01(string diaSemana, string desc)
@@ -363,16 +363,16 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         {
             MySqlDataReader resultado = null;
 
-            try 
-            { 
+            try
+            {
                 DAO_Conexao.con.Open();
                 MySqlCommand consultaModalidade = new MySqlCommand("SELECT * FROM Estudio_Turma WHERE idModalidade = " + modalidade + " AND ativa = 0", DAO_Conexao.con);
                 resultado = consultaModalidade.ExecuteReader();
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());   
+                Console.WriteLine(ex.ToString());
             }
 
             return resultado;
@@ -513,6 +513,36 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             return exc;
         }
 
+        public int buscaMaxAl(int idModal)
+        {
+            int al = 0;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand buscamax = new MySqlCommand("select nalunosmatriculadosTurma from Estudio_Turma where idModalidade = " + idModal, DAO_Conexao.con);
+                MySqlDataReader r = buscamax.ExecuteReader();
+                while (r.Read())
+                {
+                    al += int.Parse(r["nalunosmatriculadosTurma"].ToString());
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return al;
+        }
     }
 
 }
+
+
+

@@ -40,7 +40,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             {
                 cbbDiaSemana.Items.Add(b["diasemanaTurma"].ToString());
             }
-                
+
             DAO_Conexao.con.Close();
 
             if (cbbDiaSemana.Items.Count == 0)
@@ -49,7 +49,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 cbbHora.Enabled = false;
                 txtProfessor.Enabled = false;
                 txtQtdMax.Enabled = false;
-                MessageBox.Show("Turma inexistente. Selecione uma modalidade com turma.");
+                MessageBox.Show("Turma NÃO EXISTE. Por favor, selecione uma modalidade com turma existente.", "CUIDADO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -63,7 +63,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             Turma turma = new Turma();
             int id = turma.consultarIDModalidade03(cbbModalidade.Text);
             MySqlDataReader b = turma.consultaDia02(cbbDiaSemana.Text, id);
-            while(b.Read())
+            while (b.Read())
             {
                 cbbHora.Items.Add(b["horaTurma"].ToString());
             }
@@ -105,14 +105,14 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
             if (turma.tornarAt(c))
             {
-                MessageBox.Show("Modalidade ativa com Sucesso");
+                MessageBox.Show("Turma ativada com Sucesso :D", "ATIVADA!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 button2.Enabled = false;
                 txtProfessor.Enabled = true;
                 txtQtdMax.Enabled = true;
             }
             else
             {
-                MessageBox.Show("Erro ao ativar");
+                MessageBox.Show("Erro ao ativar ;(", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             DAO_Conexao.con.Close();
         }
@@ -124,16 +124,19 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             int qtde = int.Parse(txtQtdMax.Text);
             string professor = txtProfessor.Text;
             Turma t;
-             t = new Turma(consulta, professor, cbbDiaSemana.Text, cbbHora.Text, qtde);
+            t = new Turma(consulta, professor, cbbDiaSemana.Text, cbbHora.Text, qtde);
             int mod = turma.consultarIDTurma(consulta, cbbHora.Text, cbbDiaSemana.Text);
             if (t.atualizarTurma(mod))
             {
-                MessageBox.Show("Dados atualizados com Sucesso");
+                MessageBox.Show("Dados atualizados com Sucesso :D", "ATUALIZADO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Erro ao atualizar");
+                MessageBox.Show("Erro ao atualizar :(", "EERO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
 }
+
+
+

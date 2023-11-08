@@ -61,11 +61,9 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(17, 16);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(831, 299);
+            this.groupBox1.Size = new System.Drawing.Size(623, 243);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Turma";
@@ -73,34 +71,39 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // 
             // txtModalidade
             // 
-            this.txtModalidade.Location = new System.Drawing.Point(148, 67);
+            this.txtModalidade.Location = new System.Drawing.Point(111, 54);
+            this.txtModalidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtModalidade.Name = "txtModalidade";
-            this.txtModalidade.Size = new System.Drawing.Size(285, 22);
+            this.txtModalidade.Size = new System.Drawing.Size(215, 20);
             this.txtModalidade.TabIndex = 13;
             // 
             // txtNumMax
             // 
-            this.txtNumMax.Location = new System.Drawing.Point(215, 156);
+            this.txtNumMax.Enabled = false;
+            this.txtNumMax.Location = new System.Drawing.Point(161, 127);
+            this.txtNumMax.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNumMax.Name = "txtNumMax";
-            this.txtNumMax.Size = new System.Drawing.Size(100, 22);
+            this.txtNumMax.Size = new System.Drawing.Size(76, 20);
             this.txtNumMax.TabIndex = 1;
+            this.txtNumMax.Text = "0";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 159);
+            this.label5.Location = new System.Drawing.Point(19, 129);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 16);
+            this.label5.Size = new System.Drawing.Size(97, 13);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Numero MÁXIMO de Alunos:";
+            this.label5.Text = "Numero de Alunos:";
+            this.label5.Click += new System.EventHandler(this.label5_Click_1);
             // 
             // mkdHora
             // 
-            this.mkdHora.Location = new System.Drawing.Point(370, 153);
-            this.mkdHora.Margin = new System.Windows.Forms.Padding(4);
+            this.mkdHora.Location = new System.Drawing.Point(278, 124);
             this.mkdHora.Mask = "90:00";
             this.mkdHora.Name = "mkdHora";
-            this.mkdHora.Size = new System.Drawing.Size(63, 22);
+            this.mkdHora.Size = new System.Drawing.Size(48, 20);
             this.mkdHora.TabIndex = 10;
             this.mkdHora.ValidatingType = typeof(System.DateTime);
             // 
@@ -109,11 +112,10 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.modalidade});
-            this.dataGridView1.Location = new System.Drawing.Point(459, 56);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(344, 46);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(320, 185);
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -126,26 +128,23 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // 
             // txtDSemana
             // 
-            this.txtDSemana.Location = new System.Drawing.Point(148, 123);
-            this.txtDSemana.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDSemana.Location = new System.Drawing.Point(111, 100);
             this.txtDSemana.Name = "txtDSemana";
-            this.txtDSemana.Size = new System.Drawing.Size(285, 22);
+            this.txtDSemana.Size = new System.Drawing.Size(215, 20);
             this.txtDSemana.TabIndex = 7;
             // 
             // txtProfessor
             // 
-            this.txtProfessor.Location = new System.Drawing.Point(148, 95);
-            this.txtProfessor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtProfessor.Location = new System.Drawing.Point(111, 77);
             this.txtProfessor.Name = "txtProfessor";
-            this.txtProfessor.Size = new System.Drawing.Size(285, 22);
+            this.txtProfessor.Size = new System.Drawing.Size(215, 20);
             this.txtProfessor.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(148, 202);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(111, 164);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(285, 28);
+            this.button1.Size = new System.Drawing.Size(214, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "CADASTRAR";
             this.button1.UseVisualStyleBackColor = true;
@@ -154,50 +153,45 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(322, 159);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(242, 129);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 16);
+            this.label4.Size = new System.Drawing.Size(33, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Hora:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 127);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(19, 103);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 16);
+            this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = " Dia da Semana:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(68, 98);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(51, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 16);
+            this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Professor:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 70);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(37, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 16);
+            this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = " Modalidade:";
             // 
             // Form9
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(859, 325);
+            this.ClientSize = new System.Drawing.Size(644, 264);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form9";
             this.Text = "Cadastro de Turma";
             this.Load += new System.EventHandler(this.Form9_Load);

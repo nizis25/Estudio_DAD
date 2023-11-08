@@ -29,31 +29,31 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvAlunoTurma = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diaSemana = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvAluno = new System.Windows.Forms.DataGridView();
             this.CPFAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeAluno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlunoTurma)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvAlunoTurma
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvAlunoTurma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlunoTurma.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Modalidade,
             this.diaSemana,
             this.hora});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 264);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvAlunoTurma.Location = new System.Drawing.Point(12, 12);
+            this.dgvAlunoTurma.Name = "dgvAlunoTurma";
+            this.dgvAlunoTurma.Size = new System.Drawing.Size(443, 264);
+            this.dgvAlunoTurma.TabIndex = 0;
+            this.dgvAlunoTurma.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // ID
             // 
@@ -75,16 +75,16 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.hora.HeaderText = "Horário";
             this.hora.Name = "hora";
             // 
-            // dataGridView2
+            // dgvAluno
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvAluno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAluno.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CPFAluno,
             this.NomeAluno});
-            this.dataGridView2.Location = new System.Drawing.Point(555, 12);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(243, 264);
-            this.dataGridView2.TabIndex = 1;
+            this.dgvAluno.Location = new System.Drawing.Point(555, 12);
+            this.dgvAluno.Name = "dgvAluno";
+            this.dgvAluno.Size = new System.Drawing.Size(243, 264);
+            this.dgvAluno.TabIndex = 1;
             // 
             // CPFAluno
             // 
@@ -101,24 +101,24 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(810, 293);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvAluno);
+            this.Controls.Add(this.dgvAlunoTurma);
             this.Name = "Form14";
             this.Text = "Consultar Aluno na Turma";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlunoTurma)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAluno)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvAlunoTurma;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modalidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn diaSemana;
         private System.Windows.Forms.DataGridViewTextBoxColumn hora;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn CPFAluno;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeAluno;
     }

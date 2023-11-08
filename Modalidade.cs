@@ -71,6 +71,10 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 DAO_Conexao.con.Open();
                 MySqlCommand exclui = new MySqlCommand("update Estudio_Modalidae set ativa " + "= 1 where descricaoModalidade = '" + descricao + "'", DAO_Conexao.con);
                 exclui.ExecuteNonQuery();
+                DAO_Conexao.con.Close();
+
+                DAO_Conexao.con.Open();
+                MySqlCommand excTurma = new MySqlCommand("");
                 exc = true;
             }
 
@@ -87,13 +91,13 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             return exc;
         }
 
-        public bool atualizarModalidade(string descricao)
+        public bool atualizarModalidade(string descricaoMo)
         {
             bool exc = false;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand atualiza = new MySqlCommand("update Estudio_Modalidae set descricaoModalidade = '" + descricao + "', precoModalidade = '" + preco + "', qtdeAlunos = '" + qtde_alunos + "', qtdeAulas = '" + qtde_aulas + "' where descricaoModalidade = '" + descricao + "'", DAO_Conexao.con);
+                MySqlCommand atualiza = new MySqlCommand("update Estudio_Modalidae set descricaoModalidade = '" + descricaoMo + "', precoModalidade = '" + preco + "', qtdeAlunos = '" + qtde_alunos + "', qtdeAulas = '" + qtde_aulas + "' where descricaoModalidade = '" + descricao + "'", DAO_Conexao.con);
                 atualiza.ExecuteNonQuery();
                 exc = true;
             }
@@ -256,9 +260,66 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             }
             return resultado;
         }
-            
+
+        public int buscaMaxAlModal(int idModal)
+        {
+            int maxAl = 0;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand buscamax = new MySqlCommand("select qtdeAlunos from Estudio_Modalidae where idEstudio_Modalidade = " + idModal, DAO_Conexao.con);
+                MySqlDataReader r = buscamax.ExecuteReader();
+                while (r.Read())
+                {
+                    maxAl = int.Parse(r["qtdeAlunos"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return maxAl;
+        }
+
+        public static bool consultaModal(string descricaoModal)
+        {
+            bool resultado = false;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consultaModalidade = new MySqlCommand("SELECT * FROM Estudio_Modalidae WHERE descricaoModalidade = '" + descricaoModal + "'", DAO_Conexao.con);
+
+                MySqlDataReader r = consultaModalidade.ExecuteReader();
+                while (r.Read())
+                {
+                    resultado = true;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return resultado;
+        }
+
     }
 }
+
+
 
 
 

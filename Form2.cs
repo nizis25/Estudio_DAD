@@ -35,18 +35,31 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             {
                 tipo = 2; //restrito
             }
-            if (DAO_Conexao.CadLogin(textBox1.Text, textBox2.Text, tipo))
+
+
+            if (DAO_Conexao.consultaNome(textBox1.Text) == false)
             {
-                MessageBox.Show("Cadastro Realizado com Sucesso!");
+
+                if (DAO_Conexao.CadLogin(textBox1.Text, textBox2.Text, tipo))
+                {
+                    MessageBox.Show("Cadastro Realizado com Sucesso!", "CADASTRADO!", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Erro de Cadastro!", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Erro de Cadastro!");
+                MessageBox.Show("Já existe um LOGIN com este nome. Por favor, escolha outro", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
     }
 }
+
+
+

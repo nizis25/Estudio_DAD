@@ -21,7 +21,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 //con.Open();
                 retorno = true;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -38,7 +38,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 insere.ExecuteNonQuery();
                 cad = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
@@ -49,10 +49,10 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             return cad;
         }
 
-        public static int login (String usuario, String senha)
+        public static int login(String usuario, String senha)
         {
             int tipo = 0;
-            Console.WriteLine("-----------"+ usuario);
+            Console.WriteLine("-----------" + usuario);
             try
             {
                 con.Open();
@@ -65,7 +65,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 }
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
             }
@@ -77,5 +77,37 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             }
             return tipo;
         }
+
+        public static bool consultaNome(string login)
+        {
+            bool resultado = false;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consultaLogin = new MySqlCommand("SELECT * FROM Estudio_Login WHERE usuario = '" + login + "'", DAO_Conexao.con);
+
+                MySqlDataReader r = consultaLogin.ExecuteReader();
+                while (r.Read())
+                {
+                    resultado = true;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return resultado;
+        }
     }
 }
+
+
+

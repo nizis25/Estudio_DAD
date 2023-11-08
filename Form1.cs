@@ -15,7 +15,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         public Form1()
         {
             InitializeComponent();
-   
+
             if (DAO_Conexao.getConexao("143.106.241.3", "cl202203", "cl202203", "cl*25042007"))
                 Console.WriteLine("Conectado");
             else
@@ -50,26 +50,36 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         {
             int tipo = DAO_Conexao.login(textBox1.Text, textBox2.Text);
 
-            if(tipo == 0)
+            if (tipo == 0)
             {
-                MessageBox.Show("Usuário/Senha Inválidos! :( ");
+                MessageBox.Show("Usuário/Senha Inválidos! :( ", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if(tipo == 1)
+            if (tipo == 1)
             {
-                //MessageBox.Show("Usuário ADM >:D ");
+                MessageBox.Show("Usuário ADM >:D ", "BEM-VINDO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 groupBox1.Visible = false;
                 menuStrip1.Enabled = true;
             }
-            
-            if(tipo == 2)
+
+            if (tipo == 2)
             {
-                //MessageBox.Show("Usuário Restrito :O ");
+                MessageBox.Show("Usuário Restrito :O ", "BEM-VINDO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 groupBox1.Visible = false;
                 menuStrip1.Enabled = true;
-                cadastrarAlunoToolStripMenuItem.Enabled = false;
+                //ALUNO - TODOS
+
+                //MODALIDADE - APENAS O CONSULTAR ATIVO
+                cadastrarModalidadeToolStripMenuItem.Visible = false;
+                excluirModalidadeToolStripMenuItem.Visible = false;
+                atualizarModalidadeToolStripMenuItem.Visible = false;
+
+                //TURMA - APENAS O CONSULTAR ATIVO
+                cadastrarTurmaToolStripMenuItem1.Visible = false;
+                excluirTurmaToolStripMenuItem1.Visible = false;
+                atualizarTurmaToolStripMenuItem.Visible = false;
             }
-            
+
         }
 
         private void arquivoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -173,7 +183,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private void cadastrarAlunoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             //CADASTRAR ALUNO
-            Form3 f3 = new Form3();
+            Form3 f3 = new Form3(0);
             f3.MdiParent = this;
             f3.Show();
         }
@@ -263,29 +273,39 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             f13.MdiParent = this;
             f13.Show();
         }
+        private void buscarConsultarAlunoNaTurnaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //BUSCAR/CONSULTAR ALUNO NA TURMA
+            Form14 f14 = new Form14();
+            f14.MdiParent = this;
+            f14.Show();
+        }
 
         private void excluirAlunoNaTurmaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //EXCLUIR ALUNO NA TURMA
-            /*Form14 f14 = new Form14();
-            f14.MdiParent = this;
-            f14.Show();*/
+            Form13 f13 = new Form13(1);
+            f13.MdiParent = this;
+            f13.Show();
         }
 
-        private void buscarConsultarAlunoNaTurnaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void buscarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //BUSCAR/CONSULTAR ALUNO NA TURMA
-            /*Form15 f15 = new Form15();
-            f15.MdiParent = this;
-            f15.Show();*/
+            //BUSCAR ALUNO
+            Form3 f3 = new Form3(1);
+            f3.MdiParent = this;
+            f3.Show();
         }
 
-        private void atualizarReativarAlunoNaTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void atualizarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //ATUALIZAR/REATIVAR ALUNO NA TURMA
-            /*Form16 f16 = new Form16();
-            f16.MdiParent = this;
-            f16.Show();*/
+            //ATUALIZAR ALUNO
+            Form3 f3 = new Form3(2);
+            f3.MdiParent = this;
+            f3.Show();
         }
     }
 }
+
+
+

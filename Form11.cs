@@ -21,7 +21,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             InitializeComponent();
             Modalidade modalidade = new Modalidade();
             MySqlDataReader r = modalidade.consultarModalidade01();
-            while(r.Read())
+            while (r.Read())
             {
                 cbbModalidade.Items.Add(r["descricaoModalidade"].ToString());
             }
@@ -49,15 +49,15 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             {
                 cbbDiaSemana.Items.Add(read["diasemanaTurma"].ToString());
             }
-                
+
             DAO_Conexao.con.Close();
 
             if (cbbDiaSemana.Items.Count == 0)
             {
-                MessageBox.Show("Essa Turma NÃO existe!Por favor, escolha outra! :)");
+                MessageBox.Show("Essa Turma NÃO existe!Por favor, escolha outra! :)", "CUIDADO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cbbDiaSemana.Enabled = false;
                 cbbHora.Enabled = false;
-                
+
             }
             else
             {
@@ -85,7 +85,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             {
                 cbbHora.Items.Add(read["horaTurma"].ToString());
             }
-                    
+
             DAO_Conexao.con.Close();
         }
 
@@ -109,9 +109,12 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             }
             else
             {
-                MessageBox.Show("Turma não cadastrada!");
+                MessageBox.Show("Turma não cadastrada!", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             DAO_Conexao.con.Close();
         }
     }
 }
+
+
+

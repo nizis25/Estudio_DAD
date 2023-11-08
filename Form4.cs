@@ -30,18 +30,20 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             {
                 if (aluno.consultarAluno())
                 {
-                    MessageBox.Show("Deseja mesmo excluir?");
-                    if (aluno.excluirAluno())
+                    DialogResult res = MessageBox.Show("Deseja mesmo excluir?", "CUIDADO", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                    if (res == DialogResult.Yes)
                     {
-                        MessageBox.Show("Aluno Excluído com sucesso!");
+                        aluno.excluirAluno();
+                        MessageBox.Show("Aluno Excluído com sucesso!", "EXCLUÍDO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Aluno não encontrado");
+                    MessageBox.Show("Aluno não encontrado", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            
+
             DAO_Conexao.con.Close();
         }
 
@@ -61,3 +63,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         }
     }
 }
+
+
+

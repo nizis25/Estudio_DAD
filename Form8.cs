@@ -20,21 +20,31 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         {
             InitializeComponent();
             Modalidade combo = new Modalidade();
-            MySqlDataReader ler = combo.consultaTudo();
+            MySqlDataReader ler = null;
+            label5.Visible = false;
+            txtNova.Visible = false;
+
+            if (p == 2) //consultar
+            {
+                op = 1;
+                ler = combo.consultarModalidade01();
+                btnAtualizar.Visible = false;
+                btnReativar.Visible = false;
+            }
+            else op = 2;
+
+            if (p == 1)
+            {
+                ler = combo.consultaTudo();
+                label5.Visible = true;
+                txtNova.Visible = true;
+            }
 
             while (ler.Read())
             {
                 comboBox1.Items.Add(ler["descricaoModalidade"].ToString());
             }
             DAO_Conexao.con.Close();
-            if (p == 2) //consultar
-            {
-                op = 1;
-                btnAtualizar.Visible = false;
-                btnReativar.Visible = false;
-            }
-            else op = 2;
-
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -75,7 +85,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 {
                     if (modal.atualizarModalidade(descricao))
                     {
-                        MessageBox.Show("Atualizado com Sucesso!");
+                        MessageBox.Show("Atualizado com Sucesso!", "ATUALIZADO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         comboBox1.Text = "";
                         txtPrecoAtu.Text = "";
                         txtQtdeAlunosAtu.Text = "";
@@ -83,14 +93,14 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                     }
                     else
                     {
-                        MessageBox.Show("ERRO! Não foi possível atualizar");
+                        MessageBox.Show("ERRO! Não foi possível atualizar", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro");
+                MessageBox.Show("Ocorreu um erro", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -103,25 +113,25 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             int qtdeAulas = int.Parse(txtQtdeAulasAtu.Text);
             Modalidade modal = new Modalidade(comboBox1.Text, preco, qtdeAluno, qtdeAulas);
             MySqlDataReader r = modal.consultarModalidade03();
-            if(r.Read())
+            if (r.Read())
             {
                 DAO_Conexao.con.Close();
 
                 if (modal.tornarAt())
                 {
-                    MessageBox.Show("Reativo!");
+                    MessageBox.Show("Reativo!", "REATIVADO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Erros:(");
+                    MessageBox.Show("Erro:(", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
             else
             {
-                MessageBox.Show("Não encontrado");
+                MessageBox.Show("Modalidade não encontrada", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
@@ -146,9 +156,9 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             if (op == 2)//atualizar
             {
                 btnAtualizar.Visible = true;
-
-                Modalidade modal = new Modalidade(comboBox1.Text.ToString());
-                MySqlDataReader res = modal.consultarModalidade02(comboBox1.Text);
+                string mod = comboBox1.Text;
+                Modalidade modal = new Modalidade(mod.ToString());
+                MySqlDataReader res = modal.consultarModalidade02(mod);
 
                 while (res.Read())
                 {
@@ -165,6 +175,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 {
                     btnReativar.Enabled = true;
                 }
+                txtNova.Text = comboBox1.Text;
             }
         }
 
@@ -179,3 +190,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         }
     }
 }
+
+
+
