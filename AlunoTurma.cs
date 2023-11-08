@@ -149,7 +149,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand busca = new MySqlCommand("select CPFAluno, nomeAluno from Estudio_Aluno inner join Estudio_TurmaAluno on Estudio_Aluno.CPFAluno = Estudio_TurmaAluno.cpfAluno and Estudio_TurmaAluno.idTurma = " + id, DAO_Conexao.con);
+                MySqlCommand busca = new MySqlCommand("select Estudio_Aluno.CPFAluno, nomeAluno from Estudio_Aluno inner join Estudio_TurmaAluno on Estudio_Aluno.CPFAluno = Estudio_TurmaAluno.cpfAluno and Estudio_TurmaAluno.idTurma = " + id, DAO_Conexao.con);
                 r = busca.ExecuteReader();
             }
 

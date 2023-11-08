@@ -289,7 +289,17 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             f13.Show();
         }
 
-        private void buscarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        /*private void buscarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void atualizarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }*/
+
+        private void buscarAlunoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             //BUSCAR ALUNO
             Form3 f3 = new Form3(1);
@@ -297,7 +307,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             f3.Show();
         }
 
-        private void atualizarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void atualizarAlunoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             //ATUALIZAR ALUNO
             Form3 f3 = new Form3(2);

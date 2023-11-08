@@ -57,12 +57,14 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtEmail);
@@ -96,7 +98,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(239, 327);
+            this.button3.Location = new System.Drawing.Point(245, 298);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(175, 23);
             this.button3.TabIndex = 23;
@@ -106,7 +108,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(239, 285);
+            this.button1.Location = new System.Drawing.Point(6, 298);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 23);
             this.button1.TabIndex = 22;
@@ -317,6 +319,16 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // 
             this.openFileDialog1.FileName = "s";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(466, 298);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(175, 23);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "REATIVAR";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,5 +377,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button4;
     }
 }

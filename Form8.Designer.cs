@@ -68,7 +68,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // 
             // btnReativar
             // 
-            this.btnReativar.Location = new System.Drawing.Point(105, 246);
+            this.btnReativar.Location = new System.Drawing.Point(105, 194);
             this.btnReativar.Name = "btnReativar";
             this.btnReativar.Size = new System.Drawing.Size(353, 23);
             this.btnReativar.TabIndex = 11;
@@ -90,7 +90,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.Location = new System.Drawing.Point(105, 217);
+            this.btnAtualizar.Location = new System.Drawing.Point(105, 165);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(353, 23);
             this.btnAtualizar.TabIndex = 9;

@@ -23,6 +23,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             if (option == 0)
             {
                 button3.Visible = false;
+                button4.Visible = false;
                 txtNome.Enabled = false;
                 txtEnd.Enabled = false;
                 txtNum.Enabled = false;
@@ -42,6 +43,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 button1.Visible = false;
                 button2.Visible = false;
                 button3.Visible = false;
+                button4.Visible = false;
                 txtNome.Enabled = false;
                 txtEnd.Enabled = false;
                 txtNum.Enabled = false;
@@ -59,6 +61,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 button1.Visible = false;
                 button2.Enabled = false;
                 button3.Enabled = false;
+                button4.Enabled = false;
             }
 
         }
@@ -213,7 +216,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                             mkdTel.Text = r["telefoneAluno"].ToString();
                             txtEmail.Text = r["emailAluno"].ToString();
                         }
-
                         try
                         {
                             string imagem = Convert.ToString(DateTime.Now.ToFileTime());
@@ -222,13 +224,11 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                             fs.Write(bimage, 0, bimage.Length - 1);
                             fs.Close();
                             pictureBox1.Image = Image.FromFile(imagem);
-                            r.Close();
                         }
                         catch
                         {
                             MessageBox.Show("Erro ao carregar a foto", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
                         DAO_Conexao.con.Close();
                         txtNome.Enabled = true;
                         txtEnd.Enabled = true;
@@ -240,7 +240,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                         txtEstado.Enabled = true;
                         mkdTel.Enabled = true;
                         txtEmail.Enabled = true;
-                        button2.Enabled = true;
+                        //button2.Enabled = true;
                         button3.Enabled = true;
                     }
 
@@ -343,6 +343,11 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 stream.Read(bArray, 0, System.Convert.ToInt32(stream.Length));
                 return bArray;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

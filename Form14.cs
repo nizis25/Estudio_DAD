@@ -14,6 +14,9 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
     public partial class Form14 : Form
     {
         string cpf, nome;
+
+
+
         public Form14()
         {
             InitializeComponent();
@@ -28,21 +31,24 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 
                 dgvAlunoTurma.Rows.Add(id, modalidade, diasemana, hora);
             }
+            DAO_Conexao.con.Close();
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvAlunoTurma_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int linha = dgvAlunoTurma.CurrentRow.Index;
-            cpf = dgvAlunoTurma[0, linha].Value.ToString();
-            nome = dgvAlunoTurma[1, linha].Value.ToString();
+            dgvAluno.Rows.Clear();
+            int line = dgvAlunoTurma.CurrentRow.Index;
+            int id = int.Parse(dgvAlunoTurma[0, line].Value.ToString());
+            AlunoTurma at = new AlunoTurma();
+            MySqlDataReader r = at.buscaAlunoTurma(id);
+            while(r.Read())
+            {
+                string cpf = r["CPFAluno"].ToString();
+                string nome = r["nomeAluno"].ToString();
+                dgvAluno.Rows.Add(cpf, nome);
+            }
+            DAO_Conexao.con.Close();
         }
-
-        /*private void dgvAlunoTurma_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-
-
-        }*/
     }
 }
 

@@ -53,7 +53,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.dgvAlunoTurma.Name = "dgvAlunoTurma";
             this.dgvAlunoTurma.Size = new System.Drawing.Size(443, 264);
             this.dgvAlunoTurma.TabIndex = 0;
-            this.dgvAlunoTurma.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dgvAlunoTurma.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlunoTurma_CellClick);
             // 
             // ID
             // 
