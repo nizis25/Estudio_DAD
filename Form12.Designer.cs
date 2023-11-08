@@ -185,7 +185,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.Controls.Add(this.groupBox1);
             this.Name = "Form12";
             this.Text = "Atualizar Turma";
-            this.Load += new System.EventHandler(this.Form12_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

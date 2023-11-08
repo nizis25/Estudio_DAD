@@ -84,7 +84,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.Controls.Add(this.groupBox1);
             this.Name = "Form7";
             this.Text = "Excluir Modalidade";
-            this.Load += new System.EventHandler(this.Form7_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

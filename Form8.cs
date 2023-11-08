@@ -188,6 +188,11 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
         {
 
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
