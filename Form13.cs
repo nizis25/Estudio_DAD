@@ -13,7 +13,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
 {
     public partial class Form13 : Form
     {
-        int option, idTurma, idMod;
+        int option, idTurma, idMod = 0;
         public Form13(int op)
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             {
                 dgvTurma.Rows.Clear();
                 AlunoTurma alT = new AlunoTurma();
-
+                DAO_Conexao.con.Close();
                 if (alT.verificaAluno(txtCPF.Text))
                 {
                     //COMEÇO CADASTRAR
@@ -48,12 +48,9 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                             dgvTurma.Rows.Add(id, mod, ds, hr);
                         }
                         DAO_Conexao.con.Close();
-                    }
+                    }//FIM CADASTRAR
                     else
-                    //FIM CADASTRAR
-
                     //COMEÇO EXLUIR
-                    if (option == 1)
                     {
                         AlunoTurma altr = new AlunoTurma();
                         MySqlDataReader r = altr.verificaAlunoMatriculado(txtCPF.Text);
@@ -73,20 +70,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 {
                     MessageBox.Show("ERRO! Aluno não cadastrado.", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
-        }
-
-        private void Form13_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvTurma_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int linha = dgvTurma.CurrentRow.Index;
-            idTurma = int.Parse(dgvTurma[0, linha].Value.ToString());
-            idMod = int.Parse(dgvTurma[1, linha].Value.ToString());
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -107,7 +91,6 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                     {
                         MessageBox.Show("Aluno cadastrado na Turma :D", "CADASTRADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
                     else
                     {
                         MessageBox.Show("NÃO FOI POSSÍVEL o cadastro na Turma '-'", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -119,25 +102,34 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
                 }
             }
             else
-
-            if (option == 1)
             {
                 DialogResult res = MessageBox.Show("Deseja mesmo excluir?", "CUIDADO", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
                 if (res == DialogResult.Yes)
                 {
                     altr.excluirAlunoTurma();
+                    DAO_Conexao.con.Close();
                     MessageBox.Show("Aluno excluído da Turma :D", "EXCLUÍDO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
                 else
                 {
                     MessageBox.Show("Aluno NÃO FOI excluído da Turma '-'", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
+        private void dgvTurma_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int linha = dgvTurma.CurrentRow.Index;
+            idTurma = int.Parse(dgvTurma[0, linha].Value.ToString());
+            idMod = int.Parse(dgvTurma[1, linha].Value.ToString());
+        }
+
+        private void Form13_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
-
-
-

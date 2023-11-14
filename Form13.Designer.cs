@@ -70,6 +70,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.dgvTurma.Name = "dgvTurma";
             this.dgvTurma.Size = new System.Drawing.Size(443, 264);
             this.dgvTurma.TabIndex = 2;
+            this.dgvTurma.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurma_CellClick);
             // 
             // idTurmaDgv
             // 
@@ -99,6 +100,7 @@ namespace DAD_AULA01_SEGUNDO_SEMESTRE_0208
             this.btnCadastrar.TabIndex = 3;
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // Form13
             // 
